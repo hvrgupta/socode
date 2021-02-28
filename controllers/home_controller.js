@@ -1,5 +1,7 @@
 module.exports.home = function(req,res) {
-    return res.end('<h1>Express up for SoCode!');
+    return res.render('home',{
+        title: 'Home'
+    });
 }
 
 module.exports.about = function(req,res) {
