@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/layout.css">
+        <%- style -%>
+    </head>
+    <!-- Layout acts as wrapper -->
+    <body>
+        <%- include('_header'); -%>
+
+        <%- body -%> <!-- Variable part-->
+        
+        <%- include('_footer'); -%>
+        
+        <%- script -%>
+    </body>
+</html>

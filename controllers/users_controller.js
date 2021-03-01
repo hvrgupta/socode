@@ -9,3 +9,15 @@ module.exports.notification = function(req,res) {
         title: 'Notifications'
     })
 }
+
+module.exports.signUp = function(req,res) {
+    return res.render('user_sign_up',{
+        title: 'SoCode | Sign Up'
+    });
+}
+
+module.exports.signIn = function(req,res) {
+    return res.render('user_sign_in',{
+        title: 'SoCode | Sign In'
+    })
+}
