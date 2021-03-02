@@ -21,3 +21,15 @@ module.exports.signIn = function(req,res) {
         title: 'SoCode | Sign In'
     })
 }
+
+//Get the sign up data
+
+module.exports.create = function(req,res) {
+    //TODO Later
+}
+
+//Sign in and create session for the user   
+
+module.exports.createSession = function(req,res) {
+    //ToDO Later
+}

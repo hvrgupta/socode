@@ -1,14 +1,9 @@
-<html>
-    <head>
-        <title><%= title %></title>
-    </head>
-    <body>
-        <h1><%= title %></h1>
-        <form action="">
-            <input type="email" name="email" placeholder="Enter Your E-mail">
-            <input type="text" name="name" placeholder="Enter Your Name">
-            <input type="password" name="password" placeholder="Enter Password">
-            <button type="submit">Sign Up</button>
-        </form>
-    </body>
-</html>
+<h1>Sign Up</h1>
+
+<form action="/users/create" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your E-mail" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <input type="submit" value="Sign Up">
+</form>
