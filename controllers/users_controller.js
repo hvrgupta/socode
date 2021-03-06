@@ -75,3 +75,19 @@ module.exports.createSession = function(req,res) {
         }
     })
 }
+
+module.exports.signOut = function(req,res) {
+    User.findOne({_id: req.cookies.user_id},function(err,user) {
+        if(err) { console.log('error in finding user in signing in'); return; }
+
+        if(user) {  
+            console.log('from if');
+            res.clearCookie('user_id');
+            res.redirect('/users/sign-in');
+        }else{
+            console.log(req.cookies);   
+            console.log('from else');
+            res.redirect('/users/sign-in');
+        }
+    })
+}
