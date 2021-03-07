@@ -8,6 +8,7 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo').default;
 
 // Static Files
 app.use(express.static('assets'));
@@ -26,6 +27,7 @@ app.set('layout extractScripts',true)
 app.set('view engine','ejs');
 app.set('views','./views');
 
+// MongoStore used to store the session cookie in the db
 // Setting up middleware for cookie encryption
 app.use(session({
     name: 'Socode',
@@ -35,7 +37,17 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000 * 60 * 100)
-    }
+    },
+    store: MongoStore.create(
+        {
+            dbName: 'socode_development',
+            autoRemove: 'disabled',
+            mongoUrl: 'mongodb://localhost/socode_development',
+            function(err) {
+                console.log(err || 'connect-mongo setup ok')
+            }
+        }
+    )
 }));
 
 app.use(passport.initialize());
