@@ -1,3 +1,4 @@
+const { model } = require('../config/mongoose');
 const User = require('../models/user');
 
 module.exports.profile = function(req,res) {
@@ -58,4 +59,10 @@ module.exports.create = function(req,res) {
 
 module.exports.createSession = function(req,res) {
     return res.redirect('/')
+}
+
+module.exports.destroySession = function(req,res) {
+    req.logout(); //Sign out functionality provided by passport js
+
+    return res.redirect('/');
 }
