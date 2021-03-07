@@ -16,7 +16,6 @@ module.exports.signUp = function(req,res) {
     return res.render('user_sign_up',{
         title: 'SoCode | Sign Up'
     });
-    console.log(req);
 }
 
 module.exports.signIn = function(req,res) {
@@ -50,5 +49,5 @@ module.exports.create = function(req,res) {
 //Sign in and create session for the user   
 
 module.exports.createSession = function(req,res) {
-    //ToDO Later
+    return res.redirect('/')
 }
