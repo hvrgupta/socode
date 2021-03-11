@@ -1,0 +1,24 @@
+footer {
+  background-color: #222629;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em; }
+  footer p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #86C232;
+    font-size: 1.5rem;
+    margin: 0; }
+  footer .links {
+    display: flex;
+    align-items: center; }
+    footer .links a {
+      text-decoration: none;
+      text-transform: capitalize;
+      margin-right: 1em;
+      color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bold; }
+      footer .links a:hover {
+        color: #86C232; }

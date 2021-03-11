@@ -9,6 +9,15 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo').default;
+const sassMiddleware = require('node-sass-middleware');
+
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true, // To see error in console
+    outputStyle: 'extended', // css code to be shown in multiple lines
+    prefix: '/css' // where to look for css file 
+}))
 
 // Static Files
 app.use(express.static('assets'));

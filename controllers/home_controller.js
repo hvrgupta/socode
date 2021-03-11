@@ -3,9 +3,9 @@ module.exports.home = function(req,res) {
     // console.log(req.cookies);
     // // Altering Cookie
     // res.cookie('user_id',25);
-    // return res.render('home',{
-    //     title: 'Home'
-    // });
+    return res.render('home',{
+        title: 'Home'
+    });
 }
 
 module.exports.about = function(req,res) {
