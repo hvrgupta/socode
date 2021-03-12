@@ -6,15 +6,20 @@ module.exports.home = function(req,res) {
     // // Altering Cookie
     // res.cookie('user_id',25);
     // console.log(req);
-    let userPosts;
-    Post.find({user: req.user._id},function(err,posts) {
-        if(err) {console.log('err'); return;}
-        userPosts = posts;
+    // Post.find({},function(err,posts) {
+    //     if(err) {console.log('err'); return;}
 
-        // console.log(userPosts);
+    //     return res.render('home',{
+    //         title: 'Home',
+    //         posts: posts
+    //     });
+    // })
+
+    // Populating the user of each post
+    Post.find({}).populate('user').exec(function(err,posts) {
         return res.render('home',{
             title: 'Home',
-            posts: userPosts
+            posts: posts
         });
     })
 }
