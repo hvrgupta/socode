@@ -14,7 +14,7 @@ module.exports.home = function(req,res) {
     //         posts: posts
     //     });
     // })
-
+    
     // Populating the user of each post
     Post.find({}).populate('user').exec(function(err,posts) {
         return res.render('home',{
