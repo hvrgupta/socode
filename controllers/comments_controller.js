@@ -20,3 +20,31 @@ module.exports.create = function(req,res) {
         }
     })
 }
+
+module.exports.destroy = function(req,res) {
+    Comment.findById(req.params.id,function(err,comment) {
+        if(err) { console.log('error in retrieving comment'); return;}
+        
+        if(comment.user == req.user.id) {
+
+            Post.findById(comment.post,function(err,post) {
+                if(err) { console.log('error in retreving post by comment'); return;}
+                // console.log(post);
+                post.comments = post.comments.filter(item => {
+                    return item != comment.id;
+                })
+                post.save();
+                return res.redirect('back');
+            })
+
+            // can also use below short code
+            // Post.findByIdAndUpdate(comment.post,{ $pull: {comments: req.params.id} },function(req,res) {
+            //     return res.redirect('back');
+            // })
+
+            comment.remove();
+        }else {
+            res.redirect('back');
+        }
+    });
+}
