@@ -12,10 +12,14 @@ module.exports.profile = function(req,res) {
     });
 }   
 
-module.exports.notification = function(req,res) {
-    return res.render('user_profile',{
-        title: 'Notifications'
-    })
+module.exports.update = function(req,res) {
+    if(req.user.id == req.params.id) {
+        User.findByIdAndUpdate(req.params.id,req.body,function(err,user) {
+            return res.redirect('back'); 
+        });
+    }else {
+        return res.status(401).send('Unauthorized');
+    }
 }
 
 module.exports.signUp = function(req,res) {
@@ -71,3 +75,4 @@ module.exports.destroySession = function(req,res) {
 
     return res.redirect('/');
 }
+
