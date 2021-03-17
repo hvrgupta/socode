@@ -18,7 +18,7 @@ module.exports.update = function(req,res) {
             return res.redirect('back'); 
         });
     }else {
-        return res.status(401).send('Unauthorized');
+        return res.status(401).send('<h1>Unauthorized</h1>');
     }
 }
 

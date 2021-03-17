@@ -1,0 +1,201 @@
+.home-container {
+     display: flex;
+     width: 90%;
+     margin: 1em auto;
+     
+     #feed-posts {
+        font-family: 'Source Sans Pro', sans-serif;
+        width: 70%;
+        padding: 1em 2em;
+        background-color: #222629;
+        border-radius: 10px;
+        h1 {
+            color: #86C232;
+            font-size: 1.5rem;
+        }
+        #new-post-form {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            textarea {
+                padding: 1em;
+                border-radius: 5px;
+                margin-bottom: 1em;
+                outline: none;
+                resize: none;
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #222629;
+            }
+            input[type=submit] {
+                width: 20%;
+                margin: 0 80%;
+                padding: 0.7em;
+                color: #222629;
+                background-color: #86C232;
+                border: none;
+                border-radius: 5px;
+                font-weight: 900;
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        #posts-list-container {
+            margin-top: 2em;
+            
+            ul {
+                list-style: none;
+                li {
+                    padding-bottom: 1em;
+                    background-color: #86C232;
+                    border-radius: 10px;
+                    width: 80%;
+                    .main-post {
+                        position: relative;
+                        .delete-btn {
+                            position: absolute;
+                            width: max-content;
+                            margin: 0.5em 95%;
+                            text-align: right;
+                            text-decoration: none;
+                            color: white;
+                            font-weight: 900;
+                            background-color: firebrick;
+                            padding: 0.3em;
+                            border-radius: 5px;
+                            &:hover {
+                                color: red;
+                                background-color: white;
+                            }
+                        }
+                        .post-content {
+                            padding: 1em;
+                            font-weight: 700;
+                            margin-bottom: 0;
+                        }
+                        .post-user {
+                            text-align: right;
+                            margin-right: 1em;
+                            margin-top: 0;
+                            font-size: 0.9rem;
+                            font-weight: bold;
+                        }
+                    }
+                    .post-comments {
+                        margin: 1em;
+                        form {
+                            padding: 1em;
+                            width: 100%;
+                            input[type=text] {
+                                border-radius: 2px;
+                                padding: 0.5em;
+                                border: 0;
+                                width: 70%;
+                                outline: none;
+                                margin-right: 0.5em ;
+                            }
+                            input[type=submit] {
+                                border: none;
+                                padding: 0.4em;
+                                border-radius: 3px;
+                                width: 20%;
+                                font-weight: bolder;
+                                cursor: pointer;
+                                color: #222629;
+                                outline: none;
+                                &:hover,
+                                &:active {
+                                    background-color: dodgerblue;
+                                }
+                            }
+                        }
+                    }
+                    .post-comments-list {
+                        background-color: #222629;
+                        width: 80%;
+                        margin-left: 15%;
+                        border-radius: 10px;
+                        ul {
+                            li {
+                                padding: 0;
+                                background-color: #222629;
+                                .main-comment {
+                                    position: relative;
+                                    padding: 0.2em 0;
+                                    .delete-btn {
+                                        position: absolute;
+                                        width: max-content;
+                                        margin: 0.5em 115%;
+                                        font-size: 0.8rem;
+                                        text-align: right;
+                                        text-decoration: none;
+                                        color: white;
+                                        font-weight: 900;
+                                        background-color: firebrick;
+                                        padding: 0.3em;
+                                        border-radius: 5px;
+                                        &:hover {
+                                            color: red;
+                                            background-color: white;
+                                        }
+                                    }
+                                    .comment-content {
+                                        color: #86C232;
+                                        font-size: 1rem;
+                                    }
+                                    .comment-user {
+                                        font-size: 0.8rem;
+                                        color: white;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+     }
+     #user-friends {
+         box-shadow: 5px 7px;
+         width: 30%;
+         padding: 1em;
+         background-color: #86C232;
+         border-top-left-radius: 10px;
+         border-bottom-left-radius: 10px;
+         border-bottom-right-radius: 10px;
+         border-top-right-radius: 10px;
+         margin: 1em;
+         height: max-content;
+         .friends-list {
+             font-family:  'PT Sans', sans-serif;
+             color: #222629;
+             h3 {
+                 text-align: center;
+                 text-transform: uppercase;
+                 letter-spacing: 2px;
+             }
+             a {
+                 background-color: #222629;
+                 display: flex;;
+                 padding: 0.3em;
+                 margin-bottom: 0.7em;
+                 border-radius: 5px;
+                 text-decoration: none;
+                 color: white;
+                 font-weight: bold;
+                 letter-spacing: 1px;
+                 &:hover {  
+                    background-color: white;
+                    color: #222629;
+                    cursor: pointer;
+                 }
+             }
+         }
+     }
+ }

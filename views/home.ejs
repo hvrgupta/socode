@@ -1,33 +1,40 @@
-<h1>SoCode | <%= title %></h1>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/home.css">
 
-<section id="feed-posts">
-        <h4>Posts</h4>
-        <% if(locals.user) { %>
-        <form action="/posts/create" id="new-post-form" method="POST">
-            <textarea name="content" id="new-post-content" cols="30" rows="3" placeholder="Type here ..." required></textarea>
-            <input type="submit" value="Post">
-        </form>
-        <% } %> 
+<div class="home-container">
+    <section id="feed-posts">
+            <h1>Posts</h1>
+            <% if(locals.user) { %>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" id="new-post-content" cols="30" rows="5" placeholder="Type here ..." required></textarea>
+                <input type="submit" value="Post">
+            </form>
+            <% } %> 
 
-        <div id="posts-list-container">
-            <ul>
-                <% for(post of posts) { %>
-                    <!-- Global variables are passdown automatically to partials but local variablse needs to be passed -->
-                    <!-- Like 'post' is passed down to _post.ejs -->
-                    <!-- if let not used in for loop otherwise don't declare let -->
-                    <%- include('_post') %>
+            <div id="posts-list-container">
+                <ul>
+                    <% for(post of posts) { %>
+                        <!-- Global variables are passdown automatically to partials but local variables needs to be passed -->
+                        <!-- Like 'post' is passed down to _post.ejs -->
+                        <!-- if let not used in for loop otherwise don't declare let -->
+                        <%- include('_post') %>
 
-                <% } %>
-            </ul>
+                    <% } %>
+                </ul>
+            </div>
+    </section>
+
+    <section id="user-friends">
+        <div class="friends-list">
+            <h3>Friends</h3>
+            <% for(user of all_users) { %>
+                <a href="/users/profile/<%= user.id %>"><%= user.name %></a> 
+            <% } %>
         </div>
-</section>
+    </section>
+</div>
 
-<section id="user-friends">
-    <h4>Friends</h4>
-    <% for(user of all_users) { %>
-        <p>
-           <a href="/users/profile/<%= user.id %>"><%= user.name %></a> 
-        </p>
-    <% } %>
-</section>
+
 
