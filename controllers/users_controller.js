@@ -103,12 +103,13 @@ module.exports.create = async function(req,res) {
 //Sign in and create session for the user   
 
 module.exports.createSession = function(req,res) {
+    req.flash('success','Logged in Successfully');
     return res.redirect('/')
 }
 
 module.exports.destroySession = function(req,res) {
     req.logout(); //Sign out functionality provided by passport js
-
+    req.flash('success','We will miss you!');
     return res.redirect('/');
 }
 

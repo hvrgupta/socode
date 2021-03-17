@@ -145,7 +145,8 @@
       .home-container #user-friends .friends-list h3 {
         text-align: center;
         text-transform: uppercase;
-        letter-spacing: 2px; }
+        letter-spacing: 2px;
+        text-decoration: underline; }
       .home-container #user-friends .friends-list a {
         background-color: #222629;
         display: flex;
