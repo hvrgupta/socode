@@ -30,11 +30,13 @@ module.exports.update = async function(req,res) {
     try {
         if(req.user.id == req.params.id) {
             await User.findByIdAndUpdate(req.params.id,req.body);
+            req.flash('success','Profile Updated!');
             return res.redirect('back');
         }else {
             return res.status(401).send('<h1>Unauthorized</h1>');
         } 
     }catch(err) {
+        req.flash('error',err);
         console.log('Error',err);
     }
     // if(req.user.id == req.params.id) {
@@ -77,6 +79,7 @@ module.exports.create = async function(req,res) {
 
         if(!user) {
             await User.create(req.body);
+            req.flash('success','Signed Up Successfully');
             res.redirect('/users/sign-in');
         }else {
             res.redirect('back');
