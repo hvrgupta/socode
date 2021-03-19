@@ -38,6 +38,7 @@
                 font-weight: 900;
                 letter-spacing: 1px;
                 font-size: 0.8rem;
+                outline: none;
                 cursor: pointer;
                 &:hover {
                     color: white;
@@ -57,7 +58,7 @@
                     width: 80%;
                     .main-post {
                         position: relative;
-                        .delete-btn {
+                        .delete-post-btn {
                             position: absolute;
                             width: max-content;
                             margin: 0.5em 95%;
