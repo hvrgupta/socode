@@ -14,6 +14,17 @@ module.exports.create = async function(req,res) {
             });
             post.comments.push(comment);
             post.save();
+            let comment_find = await Comment.findById(comment._id).populate('user','-password');
+
+            if(req.xhr) {
+                return res.status(200).json({
+                    data: {
+                        comment: comment_find
+                    },
+                    message: 'Comment Created'
+                })
+            }
+
             req.flash('success','Comment Added!');
             res.redirect('/')
         }
