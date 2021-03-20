@@ -16,6 +16,14 @@
                     $('#posts-list-container>ul').prepend(newPost);
                     deletePost($(' .delete-post-btn', newPost));
 
+                    new Noty({
+                        theme: 'relax',
+                        text: 'Post Created',
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                    }).show();
+
                 },
                 error: function(err) {
                     console.log(err.responseText);
@@ -58,6 +66,15 @@
                 url: $(deleteLink).prop('href'),
                 success: function(data) {
                     $(`#post-${data.data.post_id}`).remove();
+
+                    new Noty({
+                        theme: 'relax',
+                        text: 'Post Removed!',
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                    }).show();
+
                 },
                 error: function(error) {
                     console.log(error.responseText);

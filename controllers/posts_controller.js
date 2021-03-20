@@ -8,18 +8,20 @@ module.exports.create = async function(req,res) {
             content: req.body.content,
             user: req.user._id
         });
-
+        let post_find = await Post.findById({_id: post._id}).populate('user','-password');
+        // console.log(post_find); 
         // AJAX sending response to user
         if(req.xhr) {
+            
             return res.status(200).json({
                 data: {
-                    post: post
+                    post: post_find
                 },
                 message: "Post created!"
             });
         }
-
         req.flash('success','Post Created!');
+        
         return res.redirect('back')
     }catch(err) {
         req.flash('error',err);
