@@ -52,7 +52,7 @@ module.exports.home = async function(req,res) {
                 path: 'user'
             }
         });
-        
+        // console.log(posts[0].comments);
         let users = await User.find({});
 
         return res.render('home',{

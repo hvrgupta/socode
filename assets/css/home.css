@@ -108,7 +108,7 @@
               .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment {
                 position: relative;
                 padding: 0.2em 0; }
-                .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment .delete-btn {
+                .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment .delete-comment-btn {
                   position: absolute;
                   width: max-content;
                   margin: 0.5em 115%;
@@ -120,7 +120,7 @@
                   background-color: firebrick;
                   padding: 0.3em;
                   border-radius: 5px; }
-                  .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment .delete-btn:hover {
+                  .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment .delete-comment-btn:hover {
                     color: red;
                     background-color: white; }
                 .home-container #feed-posts #posts-list-container ul li .post-comments-list ul li .main-comment .comment-content {

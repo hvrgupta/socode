@@ -16,7 +16,7 @@
         <% } %>
         <div class="post-comments-list">
             <ul id="post-comments-<%= post._id %>">
-                <% for (comment of post.comments) { %>
+                <% for (comment of post.comments.reverse()) { %>
 
                     <%- include('_comment') -%>
                 

@@ -65,6 +65,14 @@ module.exports.destroy = async function(req,res) {
             })
             post.save();      
             comment.remove();
+            if(req.xhr) {
+                return res.status(200).json({
+                    data: {
+                        comment_id: comment._id
+                    },
+                    message: 'Comment Removed!'
+                })
+            }
             req.flash('success','Comment Removed!');
             return res.redirect('back');
         }else {
