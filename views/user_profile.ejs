@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="/css/user_profile.css">
-<h1>Socode / <%= title%></h1> 
+<link rel="stylesheet" href="/css/user_profile.css"> 
+
+<img src="<%= user.avatar %>" alt="<%= user.name %>-image" width="100" height="100" >
 
 <% if(locals.user.id == profile_user.id) { %>
     <!-- If User matches then show the form otherwise show data -->
@@ -7,7 +8,7 @@
     <form action="/users/update/<%= profile_user.id %>" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
         <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
-        <input type="file" name="avatar" placeholder="Profile Picture">
+        <input type="file" name="avatar">
         <input type="submit" value="Update Info">
     </form>
 <% } else { %>
