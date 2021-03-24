@@ -14,6 +14,9 @@ const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash'); 
 const customMware = require('./config/middleware');
 
+// OAuth ClientID : 317526409336-aek71jsdnu647a770v85ogksh68vtc0v.apps.googleusercontent.com
+// OAuth ClientSecret: 3Kf2eRroepIkW-aRoOsFzY-Y
+
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -61,6 +64,7 @@ app.use(session({
             function(err) {
                 console.log(err || 'connect-mongo setup ok')
             }
+            
         }
     )
 }));

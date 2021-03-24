@@ -10,6 +10,7 @@ let opts = {
 
 passport.use(new JwtStrategy(opts,function(jwtPayload, done) { // function reads data from jwt payload
     
+    
     User.findById(jwtPayload._id,function(err,user) {
         if(err) { console.log('Error in finding user from JWT'); return;}
 
@@ -18,6 +19,8 @@ passport.use(new JwtStrategy(opts,function(jwtPayload, done) { // function reads
         }else{ 
             return done(null,false); // false -- user not found
         }
+
+        //when user found passportjs will automatically set req.user in request
 
     });
 }));

@@ -21,7 +21,7 @@ passport.use(new LocalStrategy({
                 return done(null,false);
             }
 
-            return done(null,user);
+            return done(null,user); // sending user to req 
         })
     }
 ));
