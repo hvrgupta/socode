@@ -17,7 +17,7 @@
                 <ul>
                     <% for(post of posts) { %>
                         <!-- Global variables are passdown automatically to partials but local variables needs to be passed -->
-                        <!-- Like 'post' is passed down to _post.ejs -->
+                        <!-- like 'post' is passed down to _post.ejs -->
                         <!-- if let not used in for loop otherwise don't declare let -->
                         <%- include('_post') %>
 
